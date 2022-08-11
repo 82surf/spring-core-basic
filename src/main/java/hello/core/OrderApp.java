@@ -11,8 +11,9 @@ import hello.core.member.MemberServiceImple;
 public class OrderApp {
 
     public static void main(String[] args) {
-        MemberService memberService = new MemberServiceImple();
-        OrderService orderService = new OrderServiceImple();
+        AppConfig appConfig = new AppConfig();
+        MemberService memberService = appConfig.memberService();
+        OrderService orderService = appConfig.orderService();
 
         Long memberId = 1L;
         Member member = new Member(memberId, "memberA", Grade.VIP);
